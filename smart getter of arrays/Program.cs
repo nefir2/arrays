@@ -10,9 +10,9 @@ namespace smart_getter_of_arrays
 	{
 		private static void Main()
 		{
-			Arrays[] array = Arrays.GetArray(x => Console.Write($"введите #{x} элемент массива: "), () => (Arrays)Console.ReadLine(), GetInt("введите размер массива: "));
-			Array.Sort(array);
-			Arrays.ShowArray(array, (x) => Console.Write(x + " "));
+			var array = Arrays.GetArray(x => Console.Write($"введите #{x} элемент массива: "), () => int.Parse(Console.ReadLine()), GetInt("введите размер массива: "), sorted: true);
+			//Array.Sort(array);
+			Arrays.ShowArray(array, true); //(x)th  => Console.Write(x + " ")
 			Console.ReadKey(true);
 		}
 		/// <summary>

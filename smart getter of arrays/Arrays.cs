@@ -4,26 +4,17 @@ namespace smart_getter_of_arrays
 	public class Arrays : IComparable<Arrays>, ICloneable, IEquatable<Arrays>
 	{
 		#region Arrays' object
-		string tostring;
+		private string tostring;
+		public string Name { get => tostring; set => tostring = value ?? "Arrays"; }
 		public Arrays() { tostring = "Arrays"; }
 		public Arrays(string idk) { tostring = idk; }
-		public static explicit operator Arrays(string v)
-		{
-			return new Arrays(v);
-		}
-		
+		public static explicit operator Arrays(string v) => new Arrays(v);
 		public override string ToString() => tostring;
 		#endregion
 		#region implementations
 		public int CompareTo(Arrays other) => this.tostring.CompareTo(other.tostring); //this.tostring.Length - other.tostring.Length + 
-		public object Clone()
-		{
-			return new Arrays(tostring);
-		}
-		public bool Equals(Arrays other)
-		{
-			return this.tostring == other.tostring;
-		}
+		public object Clone() => new Arrays(tostring);
+		public bool Equals(Arrays other) => this.tostring == other.tostring;
 		#endregion
 		#region statics
 		/// <summary>
